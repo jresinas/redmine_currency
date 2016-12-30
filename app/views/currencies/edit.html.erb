@@ -1,0 +1,6 @@
+<%= title [l(:"currency.label_currency_plural"), currencies_path], @currency.name %>
+
+<%= labelled_form_for @currency do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag l(:button_save) %>
+<% end %>

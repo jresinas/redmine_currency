@@ -1,0 +1,25 @@
+# American english strings go here
+en:
+  project_module_currencyplugin: Currency
+
+  field_symbol: Symbol
+  field_decimal_separator: Decimal separator
+  field_thousands_separator: Thousands separator
+  field_exchange: Exchange
+
+  currency:
+    plugin_name: Currency
+    plugin_description: Currency manager
+
+    label_currency: Currency
+    label_currency_plural: Currencies
+    label_currency_new: New currency
+
+    # settings
+    title_plugins_integration: Other plugins integration
+    settings:
+      text_plugins_integration: Enable the following options only if the selected plugin is properly installed and configured.
+      label_plugin_hr: Plugin HR (Human Resources)
+      label_plugin_ie: Plugin IE (Income&Expenses)
+      label_delivery_date: Field - Delivery date
+      label_delivery_status: Status - Delivered

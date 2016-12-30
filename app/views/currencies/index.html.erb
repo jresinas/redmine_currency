@@ -1,0 +1,32 @@
+<h2><%=l('hr.label_profile_management')%></h2>
+<div>
+  <div class="contextual">
+  <%= link_to l(:"currency.label_currency_new"), new_currency_path, :class => 'icon icon-add' %>
+  </div>
+
+  <h3><%#=l('bsc.label_currency_plural')%></h3>
+
+  <table class="list">
+  <tr class="<%= cycle 'odd', 'even' %>">
+    <th><%=l(:field_name)%></th>
+    <th><%=l(:field_symbol)%></th>
+    <th><%=l(:field_decimal_separator)%></th>
+    <th><%=l(:field_thousands_separator)%></th>
+    <th><%=l(:field_exchange)%></th>
+    <th></th>
+  </tr>
+
+  <% @currencies.each do |currency| %>
+  <tr class="<%= cycle 'odd', 'even' %>">
+    <td class='name'><%= link_to currency.name, edit_currency_path(currency.id) %></td>
+    <td class='symbol'><%= currency.symbol %></td>
+    <td class='decimal_separator'><%= currency.decimal_separator %></td>
+    <td class='thousands_separator'><%= currency.thousands_separator %></td>
+    <td class='exchange'><%= currency.exchange %></td>
+    <td class='buttons'>
+      <%= delete_link currency_path(currency.id) %>
+    </td>
+  </tr>
+  <% end %>
+  </table>
+</div>

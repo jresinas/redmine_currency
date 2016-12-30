@@ -1,0 +1,25 @@
+# Spanish strings go here
+es:
+  project_module_currencyplugin: Currency
+
+  field_symbol: Símbolo
+  field_decimal_separator: Separador de decimales
+  field_thousands_separator: Separador de centenas
+  field_exchange: Factor de conversión
+
+  currency:
+    plugin_name: Currency
+    plugin_description: Gestión de divisas
+
+    label_currency: Divisa
+    label_currency_plural: Divisas
+    label_currency_new: Nueva divisa
+
+    # settings
+    title_plugins_integration: Integración con otros plugins
+    settings:
+      text_plugins_integration: Activa las siguientes opciones únicamente si tienes correctamente instalado y configurado el plugin indicado.
+      label_plugin_hr: Plugin HR (Human Resources)
+      label_plugin_ie: Plugin IE (Income&Expenses)
+      label_delivery_date: Campo - Fecha de entrega
+      label_delivery_status: Estado - Entregado

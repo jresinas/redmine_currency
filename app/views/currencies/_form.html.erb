@@ -1,0 +1,9 @@
+<%= error_messages_for @currency %>
+
+<div class="box tabular">
+<p><%= f.text_field :name, :required => true %></p>
+<p><%= f.text_field :symbol, :required => true %></p>
+<p><%= f.text_field :decimal_separator, :maxlength => 1 %></p>
+<p><%= f.text_field :thousands_separator, :maxlength => 1 %></p>
+<p><%= f.number_field :exchange, :required => true, :step => "0.000000001" %></p>
+</div>
