@@ -13,6 +13,7 @@
     <th><%=l(:field_decimal_separator)%></th>
     <th><%=l(:field_thousands_separator)%></th>
     <th><%=l(:field_exchange)%></th>
+    <th><%=l(:field_currency_type)%></th>
     <th></th>
   </tr>
 
@@ -23,6 +24,7 @@
     <td class='decimal_separator'><%= currency.decimal_separator %></td>
     <td class='thousands_separator'><%= currency.thousands_separator %></td>
     <td class='exchange'><%= currency.exchange %></td>
+    <td class='currency_type'><%= l(:"currency.label_type_#{currency.currency_type}") %></td>
     <td class='buttons'>
       <%= delete_link currency_path(currency.id) %>
     </td>

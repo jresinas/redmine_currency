@@ -6,6 +6,7 @@ en:
   field_decimal_separator: Decimal separator
   field_thousands_separator: Thousands separator
   field_exchange: Exchange
+  field_currency_type: Currency type
 
   currency:
     plugin_name: Currency
@@ -15,11 +16,5 @@ en:
     label_currency_plural: Currencies
     label_currency_new: New currency
 
-    # settings
-    title_plugins_integration: Other plugins integration
-    settings:
-      text_plugins_integration: Enable the following options only if the selected plugin is properly installed and configured.
-      label_plugin_hr: Plugin HR (Human Resources)
-      label_plugin_ie: Plugin IE (Income&Expenses)
-      label_delivery_date: Field - Delivery date
-      label_delivery_status: Status - Delivered
+    label_type_dinamic: Dinamic
+    label_type_static: Static
