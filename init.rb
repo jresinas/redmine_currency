@@ -1,3 +1,5 @@
+require 'currency_module/hooks'
+
 Redmine::Plugin.register :redmine_currency do
   Rails.configuration.after_initialize do
     locale = if Setting.table_exists?
@@ -14,12 +16,6 @@ Redmine::Plugin.register :redmine_currency do
   end
 
   settings :default => {}, :partial => 'settings/currency_settings'
-
-  # project_module :bscplugin do
-  #   permission :bsc_management, { :bsc_management => [:index] }
-  #   permission :bsc_checkpoints, { :bsc_checkpoints => [:index, :new, :show, :edit, :destroy, :update, :create] }
-  #   permission :bsc_metrics, { :bsc_metrics => [:index, :change_metric] }
-  # end
 
   menu :admin_menu, :currencymenu, { :controller => 'currencies', :action => 'index' }, :html => { :class => 'currency' }, :caption => :"currency.label_currency"
 end
