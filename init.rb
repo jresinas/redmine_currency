@@ -15,7 +15,5 @@ Redmine::Plugin.register :redmine_currency do
     end
   end
 
-  settings :default => {}, :partial => 'settings/currency_settings'
-
   menu :admin_menu, :currencymenu, { :controller => 'currencies', :action => 'index' }, :html => { :class => 'currency' }, :caption => :"currency.label_currency"
 end
