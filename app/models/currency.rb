@@ -3,6 +3,10 @@ class Currency < ActiveRecord::Base
 	CURRENCY_TYPES = ['dinamic', 'static']
 
 	def self.default_currency
-		Currency.find(User.current.pref[:currency]) || Currency.first || DEFAULT_CURRENCY
+		begin
+			User.current.pref[:currency].present? ? Currency.find(User.current.pref[:currency]) : Currency.first
+		rescue
+			Currency.first.present? ? Currency.first : DEFAULT_CURRENCY
+		end
 	end
 end
