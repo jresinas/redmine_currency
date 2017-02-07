@@ -15,6 +15,7 @@ en:
     label_currency: Currency
     label_currency_plural: Currencies
     label_currency_new: New currency
+    label_currency_management: Currency management
 
     label_type_dinamic: Dinamic
     label_type_static: Static

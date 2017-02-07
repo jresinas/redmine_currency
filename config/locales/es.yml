@@ -15,6 +15,7 @@ es:
     label_currency: Divisa
     label_currency_plural: Divisas
     label_currency_new: Nueva divisa
+    label_currency_management: Gestión de divisas
 
     label_type_dinamic: Dinámica
     label_type_static: Estática
