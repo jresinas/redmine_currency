@@ -1,0 +1,1 @@
+$('tr[data-year="<%=@year.to_s%>"]').html("<%= escape_javascript(render :partial => 'edit_exchange_rate_row', :locals => {:year => @year, :exchange_rates => @exchange_rates}) %>");

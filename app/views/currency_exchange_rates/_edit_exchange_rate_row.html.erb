@@ -1,0 +1,12 @@
+<th class="center"><%= year %></th>
+<% @currencies.each do |currency| %>
+<% exchange_rate = exchange_rates.find{|c|c.currency.name == currency.name} %>
+<% exchange = begin exchange_rate.exchange rescue CurrencyExchangeRate::DEFAULT_YEARLY_EXCHANGE.to_s end %>
+  <%= fields_for "currency_exchange_rate[]", exchange_rate do |f| %>
+	  <td class="center editable"><%= (f.text_field :exchange, :size => 1).html_safe %></td>
+	<% end %>
+<% end %>
+<td class='buttons'>
+	<%= link_to l(:button_save), "#", :onclick => "$('#currency_exchange_rates').prop('action','"+currency_exchange_rates_update_year_path(:year => year)+"').submit()", :class => 'icon icon-save' %>
+  <%= link_to l(:button_delete), {:controller => 'currency_exchange_rates', :action => 'destroy_year', :year => year}, :data => {:confirm => l(:text_are_you_sure)}, :class => 'icon icon-del', :method => :delete %>
+</td>

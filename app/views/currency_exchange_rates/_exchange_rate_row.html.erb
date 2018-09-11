@@ -1,0 +1,10 @@
+<th class="center"><%= year %></th>
+<% @currencies.each do |currency| %>
+  <% exchange_rate = exchange_rates.find{|c| c.currency.id == currency.id} %>
+  <% exchange = begin exchange_rate.exchange rescue CurrencyExchangeRate::DEFAULT_YEARLY_EXCHANGE.to_s end %>
+  <td class="center editable"><%= ("<span class='"+exchange_rate.id.to_s+"'>"+exchange.to_s+" "+exchange_rate.currency.symbol+"</span>").html_safe %></td>
+<% end %>
+<td class='buttons'>
+	<%= link_to l(:button_edit), currency_exchange_rates_edit_year_path(:year => year), :class => 'icon icon-edit', :remote => true %>
+  <%= link_to l(:button_delete), {:controller => 'currency_exchange_rates', :action => 'destroy_year', :year => year}, :data => {:confirm => l(:text_are_you_sure)}, :class => 'icon icon-del', :method => :delete %>
+</td>

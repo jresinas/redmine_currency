@@ -1,0 +1,35 @@
+<div id="new_history_exchange_rate">
+  <%= form_tag controller: 'currency_exchange_rates', action: 'create_year' do %>
+    <fieldset class="box tabular">
+      <legend><%= l('currency.label_add_year') %></legend>
+      <p>
+        <label><%=l(:label_year)%></label>
+        <%= select_tag 'year', options_for_select(@year_options, selected: @next_year, disabled: @years) %>
+      </p>
+
+      <fieldset class="box tabular">
+      <legend><%=l(:'currency.label_currency_plural')%></legend>
+      <div class='splitcontentleft'>
+      <% left_currencies, right_currencies = @currencies.in_groups(2, false)
+         left_currencies.each do |currency| %>
+          <p>
+            <%= label_tag currency.name %>
+            <%= text_field_tag 'values['+currency.id.to_s+']', '', size: 10 %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class='splitcontentright'>
+        <% right_currencies.each do |currency| %>
+          <p>
+            <%= label_tag currency.name %>
+            <%= text_field_tag 'values['+currency.id.to_s+']', '', size: 10 %>
+          </p>
+        <% end %>
+      </div>
+      </fieldset>
+      <div style="clear:both;"></div>
+    </fieldset>
+    <%= submit_tag l(:"button_create") %>
+  <% end %>
+</div>

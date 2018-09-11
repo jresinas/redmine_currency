@@ -1,0 +1,9 @@
+<% if @flash == 'notice' %>
+$('tr[data-year="<%=@year%>"]').remove();
+$('tr:even').removeClass('odd').addClass('even');
+$('tr:odd').removeClass('even').addClass('odd');
+<% end %>
+
+$('.flash').remove();
+div = "<div class='flash <%=@flash%>' id='flash_<%=@flash%>'><%=@message%></div>"
+$('#content').prepend(div);

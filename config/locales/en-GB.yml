@@ -17,5 +17,10 @@ en-GB:
     label_currency_new: New currency
     label_currency_management: Currency management
 
-    label_type_dinamic: Dinamic
-    label_type_static: Static
+    #label_type_dinamic: Dinamic
+    #label_type_static: Static
+
+    label_exchange_history: Exchange rate evolution
+    label_add_year: Add new year
+
+    error_unable_delete_currency: Unable to delete currency

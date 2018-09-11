@@ -5,6 +5,4 @@
 <p><%= f.text_field :symbol, :required => true %></p>
 <p><%= f.text_field :decimal_separator, :maxlength => 1 %></p>
 <p><%= f.text_field :thousands_separator, :maxlength => 1 %></p>
-<p><%= f.number_field :exchange, :required => true, :step => "0.000000001" %></p>
-<p><%= f.select :currency_type, options_for_select(Currency::CURRENCY_TYPES.map{|t| [l(:"currency.label_type_#{t}"), t]}, @currency.currency_type) %></p>
 </div>

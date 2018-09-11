@@ -1,0 +1,18 @@
+<%= form_tag currency_exchange_rates_update_year_path(@years.first), remote: true, :method => :put, :id => 'currency_exchange_rates' do %>
+<table class="list">
+  <tr class="<%= cycle 'odd', 'even' %>">
+    <td></td>
+    <% @currencies.each do |currency| %>
+      <th><%=h currency.name %></th>
+    <% end %>
+    <th></th>
+  </tr>
+  <% @years.each do |year| %>
+    <% exchange_rates = @year_exchange_rates[year] %>
+    <tr class="<%= cycle 'odd', 'even' %>" data-year="<%=year%>">
+      <%= render :partial => 'exchange_rate_row', :locals => {:year => year, :exchange_rates => exchange_rates} %>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+
