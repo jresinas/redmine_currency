@@ -1,7 +1,7 @@
 class Currency < ActiveRecord::Base
 	has_many :currency_exchange_rate, dependent: :destroy
 	after_save :fill_years_with_ones
-	#DEFAULT_CURRENCY = Currency.new({:symbol => '€', :decimal_separator => ',', :thousands_separator => '.', :exchange => 1.0})
+	DEFAULT_CURRENCY = Currency.new({:symbol => '€', :decimal_separator => ',', :thousands_separator => '.'})#, :exchange => 1.0})
 	#CURRENCY_TYPES = ['dinamic', 'static']
 
 	def self.default_currency
