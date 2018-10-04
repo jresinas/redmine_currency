@@ -27,4 +27,28 @@ class Currency < ActiveRecord::Base
 		end
 		true
 	end
+
+	def get_current_exchange
+		get_exchange(Date.today.year)
+	end
+
+	def get_exchange(year)
+		if year.present?
+			result = self.currency_exchange_rate.where(year: year)
+			if result.blank?
+				result = self.currency_exchange_rate.where("year < ?", year).order("year DESC")
+				if result.blank?
+					result = self.currency_exchange_rate.where("year > ?", year).order("year ASC")
+				end
+			end
+		else
+			result = get_current_exchange
+		end
+
+		if result.present?
+			result.first.exchange
+		else
+			0.0
+		end
+	end
 end

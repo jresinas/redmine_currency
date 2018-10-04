@@ -13,5 +13,4 @@ class CurrencyExchangeRate < ActiveRecord::Base
 	def get_errors
 		errors.present? ? errors.full_messages.map{|m| profile.name+": "+m} : []
 	end
-
 end
